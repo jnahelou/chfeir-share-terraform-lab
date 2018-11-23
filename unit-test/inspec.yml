@@ -1,0 +1,19 @@
+name: unit-test
+title: InSpec Profile for landing zones
+maintainer: Jérôme NAHELOU
+copyright: Jérôme NAHELOU
+copyright_email: nahelou.j@sfeir.com
+license: Apache-2.0
+sersion: 0.0.1
+inspec_version: '>= 2.2.10'
+depends:
+- name: git-profile
+  git: https://github.com/jnahelou/inspec-gcp
+  branch: feat/vpn-support
+supports:
+  - platform: gcp
+attributes:
+  - name: gcp_project_id
+    type: string
+  - name: gcp_project_name
+    type: string

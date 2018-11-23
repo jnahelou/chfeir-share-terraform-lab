@@ -1,0 +1,27 @@
+---
+driver:
+  name: terraform
+  #  directory: test/fixtures
+  variable_files:              
+    - test/fixtures/test_variables.tfvars
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: terraform
+
+verifier:
+  name: terraform
+
+suites:
+  - name: default
+    verifier:
+      systems:
+         - name: local
+           backend: gcp
+      groups:
+        - name: default
+      attrs_outputs:
+        gcp_project_id: gcp_project_id
+        gcp_project_name: gcp_project_name
